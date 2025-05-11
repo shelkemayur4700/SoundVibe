@@ -42,7 +42,7 @@ const playSong = async (req, res, next) => {
 
 const pauseSong = async (req, res, next) => {
   try {
-    const accessToken = req.cookies.access_token;
+    const accessToken = req.headers.access_token;
 
     await pausePlayback(accessToken);
     res.status(200).json({ message: "Playback paused" });
